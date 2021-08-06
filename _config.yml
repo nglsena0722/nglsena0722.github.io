@@ -101,7 +101,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "기록하는 블로그"
+  name             : "일상 기록"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "매일 **놀고 먹기**."
   # location         : "Somewhere"
