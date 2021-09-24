@@ -19,8 +19,8 @@ locale                   : "en-US"
 title                    : "The Pleasures and Sorrows of Work"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "nglsena"
-description              : "nglsena blog"
+name                     : "nglsena0722"
+description              : "nglsena0722 blog"
 url                      : "https://nglsena0722.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "nglsena0722/nglsena0722.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -100,6 +100,7 @@ analytics:
 
 
 # Site Author
+# 블로그 왼쪽 위에 뜨는 부분
 author:
   name             : "일상 기록"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
@@ -287,3 +288,7 @@ defaults:
       comments: true
       share: true
       related: true
+
+sidebar:
+  - title: "Title"
+  - title: "diary"
