@@ -16,10 +16,10 @@ sidebar :
   title : "Sample"
   nav : sidebar-sample
 sidebar-sample:
-  - title: "Parent Page A"
+  - title: "diary"
     children:
-      - title: "Child Page A1"
-        url: /
+      - title: "d"
+        url: /d
       - title: "Child Page A2"
         url: /
       - title: "Child Page A3"
