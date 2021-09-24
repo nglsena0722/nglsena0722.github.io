@@ -13,8 +13,9 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
 sidebar :
-  title : "Sample"
-  nav : sidebar-sample
+  title : "diary"
+  url : /diary
+  # nav : sidebar-sample
 sidebar-sample:
   - title: "diary"
     children:
