@@ -13,8 +13,12 @@ main:
   # - title: "Sitemap"
   #   url: /sitemap/
 docs:
-  - title: "test"
-    url: https://nglsena0722.github.io/
+  - title: Getting Started
+    children:
+      - title: "Quick-Start Guide"
+        url: /docs/quick-start-guide/
+
+    
 sidebar :
   title : "diary"
   url : /diary
