@@ -288,7 +288,9 @@ defaults:
       comments: true
       share: true
       related: true
-
-sidebar:
-  - title: "Title"
-  - title: "diary"
+  - scope:
+      path: ""
+      type: docs
+    values:
+      sidebar:
+        nav: "docs"

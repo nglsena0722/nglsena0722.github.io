@@ -12,6 +12,9 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+docs:
+  - title: "test"
+    url: https://nglsena0722.github.io/
 sidebar :
   title : "diary"
   url : /diary
