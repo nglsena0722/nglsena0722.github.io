@@ -1,7 +1,7 @@
 ---
 date: 2021-08-31
 categories:
-  - 네트워크
+  - Diary
 title: "ThirdPost"
 ---
 Today is the last day of August 2021
