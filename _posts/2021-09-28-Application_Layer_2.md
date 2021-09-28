@@ -91,8 +91,44 @@ TCP, UDP는 encryption이 없어서 보안이 약하고, TCP에 보안을 보충
 
 ---
 
+Throughput, Timing을 보장하는 protocol은 아직 없지만, 만족스러운 서비스를 제공할 정도의 기술은 있다.
 
 
+#### 2.1.5 Application-Layer Protocols
+
+Application-Layer Protocol이란, 다른 end system에서 돌아가는 application process들이 서로 message를 어떻게 보내는지를 정의한다.
+
+좀 더 디테일하게 보자면, 아래 4가지로 나눌 수 있다.
+
+1. 교환되는 메시지 타입 (The types of messages exchanged)
+
+2. 메시지 형식 (The syntax of the various message types)
+
+3. 메시지 의미 (The semantics of the fields, that is, the meaning of the information in the fields)
+
+4. 언제 Process가 메시지를 보내고, 응답할지 (Rules for determining when and how a process sends messages and responds to messages)
+
+
+대표적인 Web's Application-Layer Protocol으로는 HTTP가 있다.
+
+Network Application 과 Application-Layer Protocol의 차이를 알아야 한다.
+
+Application-Layer Protocol은 Network Application의 일부이다.
+
+내가 이해하기로, Network Application은 전체적인 프로그램 자체이고 Application-Layer Protocol은 통신 방법을 정의한 것이다.
+
+
+#### 2.1.6 Network Applications Covered in This Book
+
+이 책에선 아래 주요 Application을 다룬다.
+
+1. Web
+
+2. Electronic mail
+
+3. Directory Service Video Streaming(DNS)
+
+4. P2P 
 
 
 
