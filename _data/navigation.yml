@@ -2,6 +2,9 @@
 main:
   - title: "Home"
     url: https://nglsena0722.github.io/
+
+  - title: "Categories"
+    url: /categories/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
