@@ -19,6 +19,8 @@
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff">
 
+    {% include head.html %}
+    {% include head/custom.html %}
     <!--스크롤바 바꾸기-->
 
     <style>
@@ -35,8 +37,6 @@
 
     </style>
 
-    {% include head.html %}
-    {% include head/custom.html %}
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
