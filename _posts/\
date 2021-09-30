@@ -1,0 +1,43 @@
+---
+date: 2021-09-30
+author_profile: true
+categories:
+  - network
+title: "Application Layer 4"
+---
+
+## Chapter 2. Application Layer
+
+### 2.2 The Web and HTTP
+
+#### 2.2.2 Non-Persistant and Persistant Connections
+
+* Non-Persistant connections : each request/response pair가 separate TCP connection 사이에서 이루어짐.
+
+* Persistant connections : 모든 requset, responses가 same TCP connection에서 이루어짐.
+
+---
+###### HTTP with Non-Persistant Connections
+
+```HTML
+http://www.someSchool.edu/someDepartment/home.index
+```
+
+위와 같은 URL로 HTTP 통신을 한다고 하자.
+
+1. HTTP client가 `www.someSchool.edu` Port 80으로 TCP connection을 시도함.
+
+2. HTTP client가 /someDepartment/home.index라는 path name을 담아서 HTTP request를 보냄.
+
+3. HTTP server는 path name이 포함된 request를 socket으로 받아서, reponse 메시지를 socket으로 보낸다.
+
+4. client가 response 메시지를 받고 난 후, HTTP server는 TCP connection을 닫는다.
+
+5. client는 response 메시지로 HTML file들을 받게 된다.
+
+6. 다른 object들 전송에 대해서도, 위 과정이 반복된다.
+
+each TCP conection에서  one request와 one response를 주고 받기 때문에, object 개수만큼 TCP connections이 이루어진다.
+
+
+* Round-Trip Time (RTT) : client에서 출발한 packet이 server를 거쳐 다시 client로 돌아오는 데까지 걸리는 time이다. RTT는 packet-propagation delays, packet-queuing delays, packet-processing delays를 포함한다.

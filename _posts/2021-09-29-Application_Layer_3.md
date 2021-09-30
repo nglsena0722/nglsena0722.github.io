@@ -37,4 +37,3 @@ HTTP에서 server는 client의 information을 저장해놓지 않기 때문에, 
 
 
 
-#### 2.2.2 Non-Persistent and Persistent Connections 
