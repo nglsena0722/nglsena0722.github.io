@@ -43,7 +43,7 @@ response message에는 entity body 역시 비어있는데, 애초에 수정되�
 
 
 
-#### 2.3 Electronic Mail in the Internet
+### 2.3 Electronic Mail in the Internet
 
 Internet mail system은 세 가지 components를 가진다.
 
@@ -52,3 +52,7 @@ Internet mail system은 세 가지 components를 가진다.
 2. Mail servers : Mail box 역할, message queue가 있다.
 
 3. Simple Mail Transfer Protocol(SMTP) : TCP connection을 한다.
+
+USer <-> User agents <-> Mailservers <-SMTP-> Mail servers <-> User agents <-> User 
+
+#### 2.3.1 SMTP
