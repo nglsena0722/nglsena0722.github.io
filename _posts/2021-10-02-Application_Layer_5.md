@@ -55,4 +55,3 @@ Internet mail system은 세 가지 components를 가진다.
 
 USer <-> User agents <-> Mailservers <-SMTP-> Mail servers <-> User agents <-> User 
 
-#### 2.3.1 SMTP
