@@ -2,7 +2,7 @@
 date: 2021-09-30
 author_profile: true
 categories:
-  - Diary
+  - blog
 title: "Github Blog Page Build Failure"
 ---
 
