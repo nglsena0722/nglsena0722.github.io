@@ -65,6 +65,7 @@ Alice가 Bob에게 전달할 때, 아래와 같은 과정을 거친다.
 
 따라서 hostname을 IP address로 바꿔주는 역할을 DNS(Domain Name System)이 한다.
 
+#### 2.4.1 Services Provided by DNS
 
 DNS는 아래와 같이, 또 다른 중요한 서비스를 제공해준다.
 
@@ -92,4 +93,100 @@ DNS server가 Centralized design이면 아래와 같은 문제점이 발생한�
 
 또, Each ISP는 a local DNS sever를 가지고, host는 ISP의 Local DNS server로 접근하게 된다.
 
-DNS server 접근은 recurvsive, iterative하게 이루어진다.   
+DNS server 접근은 recurvsive, iterative하게 이루어진다.  
+
+
+#### 2.4.3 DNS Records and Messages 
+
+DNS servers는 hostname-to-IP address mapppings를 제공하는 Resource Records(RRs)를 저장한다.
+
+Resource Records는 four-tuple 형식이다.
+
+```
+(Name, Value, Type, TTL)
+```
+
+TTL이란 `the time to live of the resource record`이다.
+
+Name, Value는 Type에 따라 바뀐다.
+
+1. Type = A : Name은 hostname, Value는 IP address for hostname 이다. 예를 들어, (relay1.bar.foo.com, 147.37.93.126, A) 로 나타낼 수 있다.
+
+2. Type = NS : Name은 domain, Value는 the hosname of an authoritative DNS server이다. 예를 들어, (foo.com, dns.foo.com, NS) 로 나타낼 수 있다.
+
+3. Type = CNAME : Name은 alias hostname, Value는 canonical hostname이다. 예를 들어, (foo.com, relay1.bar.foo.com, CNAME) 로 나타낼 수 있다.
+
+4. Type = MX : Value는 alias hostname, Value는 canonical name of a mail server 이다. 예를 들어, (foo.com, mail.bar.foo.com, MX) 로 나타낼 수 있다.
+
+우리 host에서 DNS server로 DNS query 메시지를 보내는 것을 확인하는 프로그램 : nslookup program
+
+Registrar : commercial entity that verifies the uniqueness of the domain name, 즉 name, IP address를 registrar에 제공함으로써 domain name을 받을 수 있다.
+
+
+### 2.5 Peer-to-Peer File Distribution
+
+P2P architecture 은 always-on infrastructure servers의 reliance를 최소한으로 하고, pairs of intermittently connected hosts(peers)들이 서로 직접적으로 통신함.
+
+P2P의 특징인 self-scalability : P2P file-sharing application에서, 각 peer들은 workload를 만들지만, 또한 다른 peer들에게 제공해주는 데 도움이 되는 service capacity도 제공해준다.
+
+P2P에서 chunk를 요청할 때, neighbors들 중에서 가장 chunk수가 부족한 것 먼저 request하게 된다. (rarest first)
+
+
+
+P2P에서 파일을 공유할 때 data 공급이 가장 빠른 네 peers과 파일들을 공유하게 된다. (네 peers는 unchocked되었다고 말한다.)
+
+
+### 2.6 Video Streaming and Content Distribution Networks
+
+#### 2.6.1 Internet Video
+
+Video는 일정 속도로 display되는, images의 sequence이다.
+
+#### 2.6.2 HTTP Streaming and DASH
+
+Client마다 bandwidth의 양이 다르다. Bandwidth의 양이 high이면, client는 high-rate version의 video를 원한다.
+
+따라서, Video를 여러 다른 버전으로 encoding하여 제공해주는 것이 DASH(Dynamic Adaptive Streaming over HTTP)이다.
+
+DASH에서는 다른 Internet Access rate를 가진 client들이 다른 encoding rates된 video로 streaming할 수 있게 해준다.
+
+#### 2.6.3 Content Distribution Networks
+
+Single massive data center에서 바로 streaming video를 제공하기는 힘들다. 아래와 같은 문제점이 있는데,
+
+1. client가 data center와 멀리 떨어져 있으면, packets이 이동하는 데 상당히 오래 걸린다.
+
+2. 많이 실행되는 video는 똑같은 communication links들을 여러번 거쳐서 보내질 것이다.
+
+3. data center가 하나밖에 없으므로, down되면 video streaming이 불가능하다.
+
+따라서 CDNs(Content Distribution Networks)를 활용한다. CDN은 지리적으로 여러 군데 servers를 두어, videos의 copy를 관리한다.
+
+CDN은 회사 자체적인 private CDN일 수도 있고, third-party CDN을 이용할 수도 있다.
+
+CDN은 두 가지의 server placement 정책 중 하나를 이용한다.
+
+1. Enter Deep : server cluster를 전 세계 ISP에 배치한다. 이를 통해 user-perceived delay와 처리량을 줄인다. 그러나 이러한 design은 유지, 보수가 어렵다.
+
+2. Bring Home : Large clusters를 작게 설치하여, ISPs를 home에 가져오는 방식이다. Enter deep 방식과는 장단점이 반대이다.
+
+
+
+
+CDN이 어떻게 동작하는지 살펴보자. 
+
+1. host가 특정 Web page를 방문하면, Local DNS server에 해당 DNS query를 보낸다.
+
+2. Local DNS server가 authoritative DNS server에게 DNS query를 전달하면, authoritative DNS server가 CDN domain을 제공한다.
+
+3. DNS query로 CDN domain에 접근하면, request file 내용이 포함된 second query를 보낸다. 이를 통해 CDN domain이 request file이 보관된 server를 제공해준다.
+
+
+CDN에서 client를 어느 cluster로 보낼지는 매우 중요하다. 
+
+간단하게는 geographically closest, 위치가 가장 가까운 cluster로 보낼 수 있겠지만, 가장 가깝다고 해서 항상 좋은 것만은 아니다.
+
+거치는 communication links나 router 수가 다를 수도 있기 때문에, 이러한 점을 고려하여 client를 보내야 한다.
+
+또 다른 방식으로는, current traffic condition을 고려하는 방법이다. CDN이 주기적으로 real-time measurements of delay and loss performance를 계산하여 가장 좋은 곳으로 client를 보내주는 방법이다.
+
