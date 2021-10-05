@@ -190,3 +190,12 @@ CDN에서 client를 어느 cluster로 보낼지는 매우 중요하다.
 
 또 다른 방식으로는, current traffic condition을 고려하는 방법이다. CDN이 주기적으로 real-time measurements of delay and loss performance를 계산하여 가장 좋은 곳으로 client를 보내주는 방법이다.
 
+
+
+
+### 2.7 Socket Programming: Creating Network Applications
+
+요 파트는 사실 파이썬을 이용하여, TCP, UDP 통신을 하는 방법을 소개한다.
+
+UDP는 바로 통신이 가능하지만, TCP는 connection 하는 과정을 포함한다 정도만 알고 있으면 될 듯하다.
+
