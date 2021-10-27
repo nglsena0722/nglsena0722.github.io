@@ -78,3 +78,36 @@ rdt2.0에서 Receiver-side는 여전히 state가 하나이다. Receiver가 packe
 
 
 가장 간단한 해결책은, data packet에 새 field를 만들어서 sender가 packet에 대한 sequence number를 부여하는 것이다. Receiver는 이제 받은 packet이 retransmission을 원하는지 판단하기 위해, sequence number만 확인하면 된다. rdt2.0에서는 이 sequece number가 1 bit이면 된다. (새로 보내는 것인지, 아니면 다시 보내는 것인지) 
+
+현재는 packet error는 있어도, packet lose는 없다고 가정한 상태이기 때문에, ACK/NAK에는 sequnce number가 필요 없다. Sender는 받게 되는 ACK/NAK이 가장 최근에 보낸 data packet에 대한 정보임을 알 수 있다. (packet lose가 없기 때문에)
+
+
+###### rdt2.1, 2.2
+
+Sender가 보낸 packet에 Sequence number를 추가한 버전이다. Sequence number 0, 1에 따라 State가 해야 하는 일이 두 가지로 나뉘기 때문에, Sender와 Receiver FSM state 수가 모두 2배로 늘어난다.
+
+Receiver가 NAK 없이, ACK에 0, 1의 sequence number를 추가하여 sender에게 보내도록 만든 것은 rdt2.2이다.
+
+sequence number 0, 1에 대해, 0은 정상 상태일 때 동작하고, 1은 retransmission을 보낼 때 numbering하는 걸로 생각했는데, 이게 아니라 0, 1 각 state 모두 정상 상태일 수 있고, error가 나면 반대 숫자가 되어 retransmission을 보내는 것으로 이해했다.
+
+###### rdt3.0
+
+이제는 bit error가 일어날 수도 있고, underlying channel이 packet을 잃을 수도 있다고 생각한다. protocol은 이제 packet loss를 감지하고, loss가 일어났을 때 어떻게 해야 하는지 다뤄야 한다.
+
+만약 Receiver가 Sender에게 보낸 ACK message가 lost가 났을 때를 생각해보자. Sender는 Receiver에게 어떤 packet도 받을 수 없다. Sender는 packet을 충분한 시간 동안 기다리다가, loss가 되었음을 확신하면 그때 되서 다시 data packet을 보내면 된다.
+
+그럼 충분한 시간, 즉 얼마만큼 기다려야 하는가? 최소 round-trip delay, packet 처리 과정, network 내 delay 등을 고려해야 하기 때문에, 이 시간을 정하는 건 매우 어려운 일이다.
+
+시간을 길게 잡으면, protocol이 정상 동작하기까지 오랜 시간이 걸리게 되므로, sender 측에서 packet loss가 일어났다는 것을 보장하지 않더라도, 특정 time value를 현명하게 선택하는 방법으로 진행된다.
+
+ACK가 정해진 시간 내에 오지 않으면, packet을 다시 보낸다. 물론 packet이 lost 되지 않아도, 시간이 오래 걸리게 되면 retransmission으로 인해 duplicate data packet이 될 수 있겠지만, 이러한 문제는 rdt2.2에서 충분히 다루었다.
+
+이러한 메커니즘은 `countdown timer`가 필요하다. Sender는 timer를 시작하고, timer interrupt에 대해 반응해야 하며, timer를 멈춰야 하는, 동작들을 수행해야 한다.
+
+packet sequence number가 0, 1로 계속 바뀌기 때문에, rdt3.0은 `alternating-bit protocol`로 불리기도 한다.
+
+
+
+지금까지 data transfer protocol의 중요 요소에 대해 알아보았다. Checksums(bit error 탐지를 위해), sequence numbers(packet error에 대한 재요청을 구분하기 위해), timers(packet loss에 대응하기 위해), positive and negative acknowledgment packets 등은 protocol에서 중요한 역할을 했다.
+
+[rdt2.1, 2.2](https://donghoson.tistory.com/47), [3.0](https://m.blog.naver.com/PostView.naver?blogId=ydg0620&logNo=220244915317&targetKeyword=&targetRecommendationCode=1) 이해를 위해 여러 블로그들을 참고하였다. 공부에 큰 도움이 되었다.
