@@ -1,5 +1,5 @@
 ---
-title: "sports"
+title: "운동 기록"
 layout: archive
 permalink: categories/sports
 author_profile: true

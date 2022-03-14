@@ -62,14 +62,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "onesentence" %}
-                        <li><a href="/categories/Diary" class="">일상 한 줄({{category[1].size}})</a></li>
+                        <li><a href="/categories/onesentence" class="">일상 한 줄({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "sports" %}
-                        <li><a href="/categories/Diary" class="">운동 기록({{category[1].size}})</a></li>
+                        <li><a href="/categories/sports" class="">운동 기록({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
