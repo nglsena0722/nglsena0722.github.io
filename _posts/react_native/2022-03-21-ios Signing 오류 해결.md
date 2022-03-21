@@ -8,11 +8,11 @@ title: "ios Signing 오류 해결"
 
 맥북에서 app store 출실흘 위해 xcode에서 작업하다가 다음과 같은 오류가 떴다.
 
-  No signing certificate “iOS Distribution” found
+```No signing certificate “iOS Distribution” found```
 
 계속 건드려 보다가 아래와 같은 에러도 발견했다.
 
-  provisioning profile doesn't include signing certificate
+```provisioning profile doesn't include signing certificate```
 
 provisioning profile이랑 certificate도 재발급 받아봤지만 소용 없었다.
 
