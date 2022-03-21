@@ -2,7 +2,7 @@
 date: 2022-03-21
 author_profile: true
 categories:
-  - onesentence
+  - react_native
 title: "ios Signing 오류 해결"
 ---
 
