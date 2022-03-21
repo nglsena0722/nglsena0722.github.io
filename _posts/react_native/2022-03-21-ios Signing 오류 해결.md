@@ -6,7 +6,7 @@ categories:
 title: "ios Signing 오류 해결"
 ---
 
-맥북에서 app store 출실흘 위해 xcode에서 작업하다가 다음과 같은 오류가 떴다.
+맥북에서 app store 출시를 위해 xcode에서 작업하다가 다음과 같은 오류가 떴다.
 
 ```No signing certificate “iOS Distribution” found```
 
