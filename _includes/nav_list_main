@@ -75,6 +75,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "book" %}
+                        <li><a href="/categories/book" class="">책 기록({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "tgd" %}
                         <li><a href="/categories/tgd" class="">tgd ({{category[1].size}})</a></li>
                     {% endif %}
