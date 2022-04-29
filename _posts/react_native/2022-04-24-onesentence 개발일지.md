@@ -95,6 +95,7 @@ https://github.com/millo-L/react-native-kakao-share-link#readme
 
 7. api 연결하기 & async storage 연결하기
 api 연결 목록 : 
+푸쉬안뜨는사람은 설정들어가서 해결하라고 하기
  푸쉬알림 온오프
  푸쉬알림 시간설정
  (async에 토큰, onoff 여부, 시간설정 요거 세개 저장해놓으면 되겠다. 아니면 useEffect 이용하든지.)
