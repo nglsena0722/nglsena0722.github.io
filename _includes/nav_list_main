@@ -25,6 +25,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "blockchain" %}
+                        <li><a href="/categories/blockchain" class="">블록체인({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "react_native" %}
                         <li><a href="/categories/react_native" class="">리액트 네이티브({{category[1].size}})</a></li>
                     {% endif %}
