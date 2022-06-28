@@ -55,7 +55,9 @@
              data-full-width-responsive="true"></ins>
       </div>
     </div>
-
+    {% if page.use_math %}
+    {% include mathjax_support.html %}
+  {% endif %}
     {% if site.search == true %}
       <div class="search-content">
         {% include search/search_form.html %}
