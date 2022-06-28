@@ -46,6 +46,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "linearAlgebra" %}
+                        <li><a href="/categories/linearAlgebra" class="">선형대수 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "nodejs" %}
                         <li><a href="/categories/nodejs" class="">NodeJS ({{category[1].size}})</a></li>
                     {% endif %}
