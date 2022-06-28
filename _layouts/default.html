@@ -21,6 +21,9 @@
 
     {% include head.html %}
     {% include head/custom.html %}
+    {% if page.use_math %}
+    {% include mathjax_support.html %}
+    {% endif %}
     <!--스크롤바 바꾸기-->
 
     <!--색깔 순서대로 스크롤 배경, 스크롤 자체, 스크롤 터치하면 나오는 색깔-->
@@ -55,9 +58,7 @@
              data-full-width-responsive="true"></ins>
       </div>
     </div>
-    {% if page.use_math %}
-    {% include mathjax_support.html %}
-  {% endif %}
+
     {% if site.search == true %}
       <div class="search-content">
         {% include search/search_form.html %}
