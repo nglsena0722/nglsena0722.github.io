@@ -1,0 +1,112 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crossless — Untangle Stars</title>
+<meta name="description" content="선이 겹치지 않게, 엉켜있는 별을 푸는 퍼즐 Crossless. 잔잔한 음악과 함께 별을 옮기다 보면 어느새 집중하고 있는 자신을 발견하게 될 거예요.">
+<meta name="theme-color" content="#0a0e24">
+<meta property="og:title" content="Crossless — Untangle Stars">
+<meta property="og:description" content="선이 겹치지 않게, 엉켜있는 별을 푸는 퍼즐.">
+<meta property="og:image" content="https://nglsena0722.github.io/assets/img/crossless-icon.png">
+<link rel="icon" href="../assets/img/crossless-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+
+<style>
+  .hero { padding: 20px 0 8px; text-align: center; }
+  .hero .wordmark { font-size: 54px; margin: 8px 0 0; }
+  .hero-anim { width: 280px; height: 280px; margin: 8px auto 4px; }
+  .hero-anim .untangle-svg { width: 100%; height: 100%; display: block; }
+  .hero .tagline { font-size: 18px; color: var(--ink); font-weight: 600; margin: 4px 0 14px; }
+  .hero .lede { margin: 0 auto 28px; text-align: center; }
+  .cta-row { display: flex; justify-content: center; margin-bottom: 8px; }
+
+  .shots {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 20px 0 8px;
+  }
+  @media (max-width: 480px) {
+    .shots { grid-template-columns: 1fr; max-width: 260px; margin-left: auto; margin-right: auto; }
+  }
+  .shot { text-align: center; }
+  .shot img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid var(--hairline);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    display: block;
+  }
+  .shot p {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 10px 12px 0;
+  }
+
+  .section-heading {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 52px 0 4px;
+  }
+
+  .variants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0 10px;
+  }
+  .variant-tag {
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--hairline);
+    color: var(--ink-dim);
+  }
+  .variants + p { color: var(--ink-faint); font-size: 14px; }
+</style>
+
+<div class="stars"></div>
+<main>
+  <a class="back-link" href="/">← Start Small</a>
+
+  <div class="hero">
+    <p class="eyebrow">Game</p>
+    <h1 class="wordmark">Crossless</h1>
+    <div class="hero-anim" data-untangle></div>
+    <p class="tagline">선을 당겨, 별을 풀어보세요.</p>
+    <p class="lede">Crossless는 선이 겹치지 않게 엉켜있는 별을 푸는 퍼즐이에요. 잔잔한 음악과 함께 별을 옮기다 보면, 어느새 집중하고 있는 자신을 발견하게 될 거예요.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://apps.apple.com/kr/app/crossless-untangle-stars/id6785257021">App Store에서 다운로드</a>
+    </div>
+  </div>
+
+  <p class="section-heading">무엇을 하나요</p>
+  <div class="shots">
+    <div class="shot">
+      <img src="../assets/img/shot-tangle.png" alt="엉킨 별들 사이로 붉은 선이 교차하는 게임 화면">
+      <p>엉킨 별을 드래그해서 교차를 없애요</p>
+    </div>
+    <div class="shot">
+      <img src="../assets/img/shot-constellation.png" alt="레벨을 깰 때마다 밝혀지는 별자리 화면">
+      <p>레벨마다 실제 별자리가 하나씩 밝혀져요</p>
+    </div>
+  </div>
+
+  <p class="section-heading">레벨이 쌓일수록</p>
+  <div class="variants">
+    <span class="variant-tag">고정된 별</span>
+    <span class="variant-tag">숨겨진 선</span>
+    <span class="variant-tag">연쇄 반응</span>
+    <span class="variant-tag">흐르는 혜성</span>
+  </div>
+  <p>새로운 규칙이 하나씩 늘어나요. 막히면 아이템으로 도움을 받을 수 있어요.</p>
+
+  <footer class="site-footer">
+    <a href="../legal/crossless/privacy.html">Privacy Policy</a>
+    <a href="../legal/crossless/terms.html">Terms of Service</a>
+    <a href="mailto:nglsena0722@gmail.com">nglsena0722@gmail.com</a>
+  </footer>
+</main>
+
+<script src="../assets/untangle.js"></script>

@@ -1,0 +1,89 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start Small</title>
+<meta name="description" content="Start Small — 작게 만들고, 오래 다듬는 1인 스튜디오. 별을 푸는 퍼즐 Crossless를 만들고 있습니다.">
+<meta name="theme-color" content="#0a0e24">
+<meta property="og:title" content="Start Small">
+<meta property="og:description" content="작게 만들고, 오래 다듬는 1인 스튜디오.">
+<meta property="og:image" content="https://nglsena0722.github.io/assets/img/crossless-icon.png">
+<link rel="icon" href="assets/img/crossless-icon.png">
+<link rel="stylesheet" href="assets/site.css">
+
+<style>
+  .hub-hero { padding: 72px 0 8px; }
+  .hub-anim { width: 168px; height: 168px; margin: 22px 0 26px; }
+  .hub-anim .untangle-svg { width: 100%; height: 100%; display: block; }
+  .wordmark--hub { font-size: 44px; }
+
+  .apps-heading {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 56px 0 16px;
+  }
+
+  .app-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--hairline);
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .app-card:hover { border-color: rgba(111, 208, 255, 0.35); transform: translateY(-1px); }
+  .app-card:focus-visible { outline: 2px solid var(--calm-blue); outline-offset: 3px; }
+
+  .app-card img {
+    width: 56px; height: 56px; border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+  .app-card .app-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--wordmark);
+    margin: 0 0 2px;
+  }
+  .app-card .app-sub { font-size: 14px; color: var(--ink-dim); margin: 0; }
+  .app-card .app-arrow { margin-left: auto; color: var(--ink-faint); font-size: 20px; }
+
+  .next-note {
+    font-size: 14px;
+    color: var(--ink-faint);
+    margin: 18px 4px 0;
+  }
+</style>
+
+<div class="stars"></div>
+<main>
+  <div class="hub-hero">
+    <p class="eyebrow">Studio</p>
+    <h1 class="wordmark wordmark--hub">Start Small</h1>
+    <div class="hub-anim" data-untangle></div>
+    <p class="lede">작게 만들고, 오래 다듬는 1인 스튜디오예요. 복잡한 걸 걷어내고 손끝에 남는 감각 하나에 집중합니다.</p>
+  </div>
+
+  <p class="apps-heading">만든 것</p>
+  <a class="app-card" href="/crossless/">
+    <img src="assets/img/crossless-icon.png" alt="">
+    <div>
+      <p class="app-name">Crossless</p>
+      <p class="app-sub">선이 겹치지 않게, 엉켜있는 별을 푸는 퍼즐</p>
+    </div>
+    <span class="app-arrow" aria-hidden="true">→</span>
+  </a>
+  <p class="next-note">다음 게임은 조용히 준비 중이에요.</p>
+
+  <footer class="site-footer">
+    <span>© 2026 Start Small</span>
+    <a href="mailto:nglsena0722@gmail.com">nglsena0722@gmail.com</a>
+  </footer>
+</main>
+
+<script src="assets/untangle.js"></script>
