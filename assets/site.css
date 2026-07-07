@@ -156,6 +156,24 @@ footer.site-footer a:hover { color: var(--ink); text-decoration: underline; }
   font-size: 14px;
   color: var(--ink-faint);
   text-decoration: none;
-  padding: 20px 0 0;
 }
 .back-link:hover { color: var(--ink-dim); }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 24px 0 0;
+}
+
+.lang-switch {
+  font-size: 13px;
+  color: var(--ink-faint);
+  text-decoration: none;
+  border: 1px solid var(--hairline);
+  padding: 6px 13px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.lang-switch:hover { color: var(--ink-dim); border-color: rgba(111, 208, 255, 0.35); }
